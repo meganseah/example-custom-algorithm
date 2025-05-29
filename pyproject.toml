@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "example_custom_algo"
+version = "0.1.0"
+description = "Example Custom Algo, referenced from DQN"
+authors = ["Digital Hub, 2024"]
+readme = "README.md"
+packages = [{ include = "dqn" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ray = "2.4.0"
+protobuf = "3.19.3"
+
+[tool.poetry.group.dev.dependencies]
+gymnasium = "^0.26.3"
+ray = "^2.4.0"
+torch = [
+    { markers = "sys_platform == 'win32'", url = "https://download.pytorch.org/whl/cu111/torch-1.8.1%2Bcu111-cp39-cp39-win_amd64.whl" },
+    { markers = "sys_platform == 'linux'", url = "https://download.pytorch.org/whl/cu111/torch-1.8.1%2Bcu111-cp39-cp39-linux_x86_64.whl" }
+]
+dm-tree = "^0.1.8"
+numpy = "^1.23.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
